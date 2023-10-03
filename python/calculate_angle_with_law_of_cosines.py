@@ -61,16 +61,17 @@ def calculate_angle_c():
 # Use a conditional statement in a function to choose the correct function to solve the problem.
 def find_angle():
     sides = ["A", "B", "C"]
-    question = input("Enter the uppercase letter for the angle you are trying to find.\n")
-    for i in range(1):
-        if question == sides[0]:
-            calculate_angle_a()
-        elif question == sides[1]:
-            calculate_angle_b()
-        elif question == sides[2]:
-            calculate_angle_c()
-        else:
-            find_angle()
+    question = str(input("Enter the letter for the angle you are trying to find: either A, B, or C.\n")).upper()
+    try:
+        for i in range(1):
+            if question == sides[0]:
+                calculate_angle_a()
+            elif question == sides[1]:
+                calculate_angle_b()
+            elif question == sides[2]:
+                calculate_angle_c()
+    finally:
+        find_angle()
 
 
 find_angle()
