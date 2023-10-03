@@ -70,7 +70,7 @@ def find_angle():
                 calculate_angle_b()
             elif question == sides[2]:
                 calculate_angle_c()
-    except:
+    finally:
         find_angle()
 
 
