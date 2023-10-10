@@ -1,5 +1,12 @@
 import math
 
+###
+# The purpose of this program is to calculate the unknown angle of a triangle, or x, based on the Law of Cosines.
+# In the Law of Cosines, for a triangle, angle A equals the arccosine of the angle. To get the arccosine of angle A,
+# the cosine should be calculated first, using the following formula: cos_a = ((b**2) + (c**2) - (a**2))/(2 * (b * c))
+# The formula for finding the cosine for angles B and C follows a similar pattern.
+# This program allows the user to get the length of angles A, B, or C.
+###
 
 # VARIABLES
 
