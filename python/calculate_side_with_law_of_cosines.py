@@ -1,5 +1,14 @@
 import math
 
+###
+# The purpose of this program is to calculate the unknown side length of a triangle, or x, based on the Law of Cosines.
+# In the Law of Cosines, for a triangle, side a equals the square root of the following:
+# the sum of side b squared and c squared multiplied by 2 multiplied by sides b and c. In other words,
+# side_a = math.sqrt((b**2) + (c**2)-2 * (b * c) * math.cos(math.radians(a_angle)))
+# The formulas to get the length of sides b and c follow a similar pattern. This program allows the user to get the
+# length of sides a, b, or c.
+###
+
 # VARIABLES
 
 
