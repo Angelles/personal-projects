@@ -36,7 +36,8 @@ def calculate_angle_a():
     cos_a = ((b**2) + (c**2) - (a**2))/(2 * (b * c))
     # Calculate the arc cosine of angle A.
     acos_a = math.degrees(math.acos(cos_a))
-    print("The measure of angle A is:", acos_a)
+    result = "The measure of angle A is: {:.1f}"
+    print(result.format(acos_a))
 
 
 # Find angle B with Law of Cosines.
@@ -49,7 +50,8 @@ def calculate_angle_b():
     cos_b = ((a**2) + (c**2) - (b**2))/(2 * (a * c))
     # Calculate the arc cosine of angle B.
     acos_b = math.degrees(math.acos(cos_b))
-    print("The measure of angle B is:", acos_b)
+    result = "The measure of angle B is: {:.1f}"
+    print(result.format(acos_b))
 
 
 # Find angle C with Law of Cosines.
@@ -62,23 +64,32 @@ def calculate_angle_c():
     cos_c = ((a**2) + (b**2) - (c**2))/(2 * (a * b))
     # Calculate the arc cosine of angle C.
     acos_c = math.degrees(math.acos(cos_c))
-    print("The measure of angle C is:", acos_c)
+    result = "The measure of angle C is: {:.1f}"
+    print(result.format(acos_c))
 
 
 # Use a conditional statement in a function to choose the correct function to solve the problem.
 def find_angle():
     sides = ["A", "B", "C"]
-    question = str(input("Enter the letter for the angle you are trying to find: either A, B, or C.\n")).upper()
-    try:
-        for i in range(1):
-            if question == sides[0]:
-                calculate_angle_a()
-            elif question == sides[1]:
-                calculate_angle_b()
-            elif question == sides[2]:
-                calculate_angle_c()
-    finally:
-        find_angle()
+    on = True
+    while on:
+        question = str(input("Enter the letter for the angle you are trying to find: either A, B, or C.\n "
+                             "Press Q to quit.\n")).upper()
+        try:
+            for i in range(1):
+                if question == sides[0]:
+                    calculate_angle_a()
+                elif question == sides[1]:
+                    calculate_angle_b()
+                elif question == sides[2]:
+                    calculate_angle_c()
+                elif question == "Q":
+                    on = False
+                    print("Thank you for using the program.")
+                else:
+                    print("Incorrect input.")
+        except TypeError:
+            print("An exception occurred.")
 
 
 find_angle()
