@@ -78,16 +78,25 @@ def calculate_side_c():
 # Use a conditional statement in a function to choose the correct function to solve the problem.
 def find_side():
     sides = ["a", "b", "c"]
-    question = input("Enter the lowercase letter for the side you are trying to find.\n")
-    for i in range(1):
-        if question == sides[0]:
-            calculate_side_a()
-        elif question == sides[1]:
-            calculate_side_b()
-        elif question == sides[2]:
-            calculate_side_c()
-        else:
-            print(question)
+    on = True
+    while on:
+        question = str(input("Enter the lowercase letter for the side you are trying to find.\n"
+                             "Enter q to quit.\n")).lower()
+        try:
+            for i in range(1):
+                if question == sides[0]:
+                    calculate_side_a()
+                elif question == sides[1]:
+                    calculate_side_b()
+                elif question == sides[2]:
+                    calculate_side_c()
+                elif question == "q":
+                    on = False
+                    print("Thank you for using the program.")
+                else:
+                    print(question)
+        except TypeError:
+            print("An exception occurred.")
 
 
 find_side()
