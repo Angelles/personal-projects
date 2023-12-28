@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/styles.css') }}">
-    <title>Task App</title>
-</head>
-<body>
-    <h1>Welcome to Task App!</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to Task App! {% endblock %}</h1>
+{% endblock %}
