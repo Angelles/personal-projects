@@ -2,4 +2,11 @@
 
 {% block content %}
     <h1>{% block title %} Welcome to Task App! {% endblock %}</h1>
+      {% for task in tasks %}
+        <a href="#">
+            <h2>{{ task['title'] }}</h2>
+        </a>
+        <span class="badge badge-primary">{{ task['created'] }}</span>
+        <hr>
+    {% endfor %}
 {% endblock %}
