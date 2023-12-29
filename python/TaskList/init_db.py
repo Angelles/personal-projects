@@ -1,24 +1,26 @@
 import sqlite3
 
+###
+# This code is from
+# https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3#step-4-setting-up-the-database
+# It is for setting up the database and populating it with test posts.
+###
+
 connection = sqlite3.connect('database.db')
 
-# Open schema.sql file to create a connection with the db.
+
 with open('schema.sql') as f:
     connection.executescript(f.read())
 
 cur = connection.cursor()
 
-# Insert content into the db.
-cur.execute("INSERT INTO tasks (title, content, status) VALUES (?, ?, ?)",
-            ('First Task', 'Content for the first task', 'Status')
+cur.execute("INSERT INTO posts (title, content) VALUES (?, ?)",
+            ('First Post', 'Content for the first post')
             )
 
-cur.execute("INSERT INTO tasks (title, content, status) VALUES (?, ?, ?)",
-            ('Second Tasks', 'Content for the second task', 'Status')
+cur.execute("INSERT INTO posts (title, content) VALUES (?, ?)",
+            ('Second Post', 'Content for the second post')
             )
 
-# Commit the content.
 connection.commit()
-
-# Close the connection.
 connection.close()

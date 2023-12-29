@@ -1,5 +1,6 @@
 import sqlite3
 from flask import Flask, render_template
+from werkzeug.exceptions import abort
 
 ###
 # Per DigitalOcean:
@@ -18,12 +19,30 @@ def get_db_connection():
     return conn
 
 
+def get_post(post_id):
+    conn = get_db_connection()
+    post = conn.execute('SELECT * FROM posts WHERE id = ?',
+                        (post_id,)).fetchone()
+    conn.close()
+    if post is None:
+        abort(404)
+    return post
+
+
 app = Flask(__name__)
 
 
+# Get all posts and display them on the index page using the template.
 @app.route('/')
 def index():
-    conn = get_db_connection() # Open the db connection.
-    tasks = conn.execute('SELECT * FROM tasks').fetchall() # Get all the rows of tasks.
-    conn.close() # Close the connection.
-    return render_template('index.html', tasks=tasks)
+    conn = get_db_connection()  # Open the db connection.
+    posts = conn.execute('SELECT * FROM posts').fetchall()  # Get all the rows of posts.
+    conn.close()  # Close the connection.
+    return render_template('index.html', posts=posts)
+
+
+# Get individual post.
+@app.route('/<int:post_id>')
+def post(post_id):
+    post = get_post(post_id)
+    return render_template('post.html', post=post)
