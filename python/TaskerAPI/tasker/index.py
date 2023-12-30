@@ -7,9 +7,15 @@ import model.task_type
 app = Flask(__name__)
 
 tasks = [
-    model.school.School('1', 'this is a body', 'not started', 'this is a title'),
-    model.hobby.Hobby('2', 'this is a body 2', 'not started', 'this is a title 2')
+    model.school.School('1', 'this is a title', 'this is a body', 'not started'),
+    model.hobby.Hobby('2', 'this is another title', 'this is another body', 'started')
     ]
+
+###
+# To make a successful post request to the school endpoint using cURL in a Windows environment, use the following syntax
+# being sure to escape the double quotes in the data section:
+# curl -X POST -H "Content-Type: application/json" -d "{\"id\":3, \"title\":\"third\", \"body\":\"bodybodybody\", \"status\": \"not started\"}" localhost:5000/school
+###
 
 
 @app.route('/school')
