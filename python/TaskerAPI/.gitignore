@@ -1,0 +1,12 @@
+bootstrap.sh
+Dockerfile
+Pipfile
+Pipfile.lock
+pyenv.cfg
+/Lib
+/Lib/**
+/Scripts
+/Scripts/**
+/Include
+/Include/**
+/tasker/.idea/**
