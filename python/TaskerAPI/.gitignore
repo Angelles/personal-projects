@@ -9,4 +9,5 @@ pyenv.cfg
 /Scripts/**
 /Include
 /Include/**
+/.idea
 /tasker/.idea/**
