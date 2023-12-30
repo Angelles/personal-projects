@@ -11,3 +11,4 @@ pyenv.cfg
 /Include/**
 /.idea
 /tasker/.idea/**
+/__pycache__/**
