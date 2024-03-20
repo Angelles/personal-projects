@@ -1,24 +1,23 @@
 #include <stdio.h>
-#define LIMIT 15 // the limit for the loops
 
-/* Prints the Fibonacci sequence, starting with 1 and ending with 987. 
-* Author: Angelle Leger */
-int numbers[LIMIT];
+/* The user may enter a number (n) to find the nth number in the Fibonacci sequence. This is an example of a recursive function. 
+ * Angelle Leger */
 
-int fibonacci(int n, int numbers[]){
-	for (int i = 3; i < LIMIT; i++){
-		n = numbers[i-1] + numbers[i-2];
-		numbers[i] = n;
-			} 
-	return n;
+int fibonacci(int n){
+	if (n == 0){
+		return 0; // First term in sequence
+	} else if (n == 1){
+		return 1; // Second and third terms in sequence
+	} else {
+	return fibonacci(n-1) + fibonacci(n-2); // nth terms in sequence
+	}
 }
+
+
 int main(){
-  numbers[0] = 1; // 1st number
-	numbers[1] = 2; // 2nd number
-	numbers[2] = numbers[0] + numbers[1]; // 3rd number - establishing the pattern
-	fibonacci(numbers[2], numbers);
-	for (int i = 0; i < LIMIT; i++){
-		printf("%d\n", numbers[i]);
-				}
+	int n;
+	printf("Enter an integer to get the number at that place in the Fibonacci sequence.\n");
+	scanf("%d", &n); 
+	printf("The number is: %d\n", fibonacci(n)); // Call recursive function
 	return 0;
 }
