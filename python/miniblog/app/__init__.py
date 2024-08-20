@@ -1,5 +1,4 @@
 from flask import Flask
-from app import routes
 
 app = Flask(__name__)
 
@@ -10,3 +9,5 @@ def login_get():
 @app.post("/login")
 def login_post():
     return do_the_login()
+
+from app import routes
