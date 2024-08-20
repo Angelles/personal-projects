@@ -9,8 +9,19 @@
     {% endif %}
 </head>
 <body>
-    <div>Microblog: <a href="/index">Home</a></div>
+    <div>Microblog:
+        <a href="/index">Home</a>
+        <a href="/login">Login</a></div>
         <hr>
+    {% with messages = get_flashed_messages() %} <!--form submission-->
+    {% if messages %}
+    <ui>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ui>
+    {% endif %}
+    {% endwith %}
         {% block content %}{% endblock %}
 </body>
 </html>
