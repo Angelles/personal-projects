@@ -1,3 +1,4 @@
+from datetime import datetime, timezone
 from typing import Optional
 import sqlalchemy as sa
 import sqlalchemy.orm as so
@@ -13,6 +14,23 @@ class User(db.Model):
                                              unique=True)
     password_hash: so.Mapped[Optional[str]] = so.mapped_column(sa.String(256))
 
-    # defines how to print User class objects
+    posts: so.WriteOnlyMapped['Post'] = so.relationship(back_populates='author')  # creates db relationship between posts and author
+
+# defines how to print User class objects
     def __repr__(self):
         return '<User {}>'.format(self.username)
+    
+class Post(db.Model):
+    id: so.Mapped[int] = so.mapped_column(primary_key=True)
+    body: so.Mapped[str] = so.mapped_column(sa.String(140))
+    timestamp: so.Mapped[datetime] = so.mapped_column(
+        index=True, default=lambda: datetime.now(timezone.utc))
+    user_id: so.Mapped[int] = so.mapped_column(sa.ForeignKey(User.id),
+                                               index=True)  # secondary key that maps to User id
+    author: so.Mapped[User] = so.relationship(back_populates='posts')
+
+    # defines how to print Post class objects
+    def __repr__(self):
+        return '<Post {}>'.format(self.body)
+
+    
