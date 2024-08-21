@@ -1,4 +1,6 @@
 .flaskenv
+/.idea
+.idea
 
 # venv
 /venv
