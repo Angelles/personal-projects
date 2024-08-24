@@ -1,27 +1,28 @@
 from flask import render_template, flash, redirect, url_for, request
 from app import app, db
 from app.forms import LoginForm
-from flask_login import current_user, login_user, logout_user
+from flask_login import current_user, login_user, logout_user, login_required
 import sqlalchemy as sa
 from app.models import User
 from urllib.parse import urlsplit
+
 
 
 @app.route('/')
 @app.route('/index')
 @login_required
 def index():
-    user = {'username': 'Angelle'}  # placeholder user
-    posts = [                       # placeholder posts object
-        {
-            'author': {'username': 'John'},
-            'body': 'Beautiful day in Portland!'
-        },
-        {
-            'author': {'username': 'Susan'},
-            'body': 'The Avengers movie was so cool!'
-        }
-    ]
+    # user = {'username': 'Angelle'}  # placeholder user
+    # posts = [                       # placeholder posts object
+    #     {
+    #         'author': {'username': 'John'},
+    #         'body': 'Beautiful day in Portland!'
+    #     },
+    #     {
+    #         'author': {'username': 'Susan'},
+    #         'body': 'The Avengers movie was so cool!'
+    #     }
+    # ]
     return render_template('index.html', title='Home', user=user, posts=posts)
 
 
