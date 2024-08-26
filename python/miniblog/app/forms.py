@@ -52,3 +52,9 @@ class EditProfileForm(FlaskForm):
 # for submitting following and unfollowing actions
 class EmptyForm(FlaskForm):
     submit = SubmitField('Submit')
+
+# for submitting a blog post
+class PostForm(FlaskForm):
+    post = TextAreaField('Say something', validators=[
+        DataRequired(), Length(min=1, max=140)])
+    submit = SubmitField('Submit')
