@@ -19,7 +19,7 @@ class RegistrationForm(FlaskForm):
     password = PasswordField(_l('Password', validators=[DataRequired()]))
     password2 = PasswordField(
         _l('Repeat Password', validators=[DataRequired(), EqualTo('password')]))
-    submit = SubmitField('Register')
+    submit = SubmitField(_('Register'))
 
     def validate_username(self, username):
         user = db.session.scalar(sa.select(User).where(
@@ -52,7 +52,7 @@ class EditProfileForm(FlaskForm):
 
 # for submitting following and unfollowing actions
 class EmptyForm(FlaskForm):
-    submit = SubmitField('Submit')
+    submit = SubmitField(_l('Submit'))
 
 # for submitting a blog post
 class PostForm(FlaskForm):
