@@ -9,6 +9,7 @@ def translate():
     """Translation and localization commands."""
     pass
 
+# flask translate update to update all language repositories
 @translate.command()
 def update():
     """Update all languages."""
@@ -18,11 +19,14 @@ def update():
         raise RuntimeError('update command failed')
     os.remove('messages.pot')
 
+# flask translate compile to compile all language repositories
 @translate.command()
 def compile():
     """Compile all languages."""
     if os.system('pybabel compile -d app/translations'):
         raise RuntimeError('compile command failed')
+
+# flask translate init LANG to add a new language
 
 @translate.command()
 @click.argument('lang')
