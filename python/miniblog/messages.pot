@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-08-29 19:37-0400\n"
+"POT-Creation-Date: 2024-08-30 08:04-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgid "Please log in to access this page."
 msgstr ""
 
 #: app/email.py:24
-msgid "[Microblog] Reset Your Password"
+msgid "[Miniblog] Reset Your Password"
 msgstr ""
 
 #: app/forms.py:10 app/forms.py:17 app/forms.py:37
@@ -49,6 +49,10 @@ msgstr ""
 msgid "Repeat Password"
 msgstr ""
 
+#: app/forms.py:22
+msgid "Register"
+msgstr ""
+
 #: app/forms.py:28 app/forms.py:51
 msgid "Please use a different username."
 msgstr ""
@@ -61,7 +65,7 @@ msgstr ""
 msgid "About me"
 msgstr ""
 
-#: app/forms.py:39 app/forms.py:61
+#: app/forms.py:39 app/forms.py:55 app/forms.py:61
 msgid "Submit"
 msgstr ""
 
@@ -85,23 +89,23 @@ msgstr ""
 msgid "Congratulations, you are now a registered user!"
 msgstr ""
 
-#: app/routes.py:119
+#: app/routes.py:120
 msgid "Your changes have been saved."
 msgstr ""
 
-#: app/routes.py:138
+#: app/routes.py:139
 msgid "You cannot follow yourself!"
 msgstr ""
 
-#: app/routes.py:159
+#: app/routes.py:160
 msgid "You cannot unfollow yourself!"
 msgstr ""
 
-#: app/routes.py:193
+#: app/routes.py:194
 msgid "Check your email for the instructions to reset your password"
 msgstr ""
 
-#: app/routes.py:210
+#: app/routes.py:211
 msgid "Your password has been reset."
 msgstr ""
 
@@ -151,7 +155,8 @@ msgid "Edit Profile"
 msgstr ""
 
 #: app/templates/index.html:4
-msgid "Hi,"
+#, python-format
+msgid "Hi, %(username)s!"
 msgstr ""
 
 #: app/templates/index.html:22
@@ -172,21 +177,5 @@ msgstr ""
 
 #: app/templates/reset_password_request.html:4
 msgid "Reset Password"
-msgstr ""
-
-#: app/templates/user.html:11
-msgid "Last seen on: "
-msgstr ""
-
-#: app/templates/user.html:12
-msgid "followers, "
-msgstr ""
-
-#: app/templates/user.html:12
-msgid "following"
-msgstr ""
-
-#: app/templates/user.html:14
-msgid "Edit your profile"
 msgstr ""
 
