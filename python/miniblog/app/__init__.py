@@ -11,10 +11,12 @@ from flask_moment import Moment
 from flask_babel import Babel, lazy_gettext as _l
 
 
+
 def get_locale():
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 app = Flask(__name__)
+
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
@@ -25,7 +27,8 @@ mail = Mail(app)
 moment = Moment(app)  # for datetime
 babel = Babel(app, locale_selector=get_locale)
 
-
+from app.errors import bp as errors_bp
+app.register_blueprint(errors_bp)  # errors Blueprint module
 
 # emailing error logs
 if not app.debug:
@@ -59,5 +62,5 @@ if not app.debug:
 
 
 
-from app import routes, models, errors
+from app import routes, models
 
