@@ -8,6 +8,8 @@ from urllib.parse import urlsplit
 from datetime import datetime, timezone
 from app.email import send_password_reset_email
 from flask_babel import _, get_locale
+# from langdetect import detect, LangDetectException
+
 
 
 
@@ -17,6 +19,12 @@ from flask_babel import _, get_locale
 def index():
     form = PostForm()
     if form.validate_on_submit():
+        # try:  # no post translation for now
+        #     language = detect(form.post.data)  # detect language
+        # except LangDetectException:
+        #     language = ''
+        # post = Post(body=form.post.data, author=current_user,
+        #             language=language)
         post = Post(body=form.post.data, author=current_user)
         db.session.add(post)
         db.session.commit()
