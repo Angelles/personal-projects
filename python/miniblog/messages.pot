@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-08-30 08:04-0400\n"
+"POT-Creation-Date: 2024-08-30 08:38-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -177,5 +177,35 @@ msgstr ""
 
 #: app/templates/reset_password_request.html:4
 msgid "Reset Password"
+msgstr ""
+
+#: app/templates/user.html:7
+msgid "User"
+msgstr ""
+
+#: app/templates/user.html:11
+msgid "Last seen on: "
+msgstr ""
+
+#: app/templates/user.html:12
+#, python-format
+msgid "%(count)d followers"
+msgstr ""
+
+#: app/templates/user.html:12
+#, python-format
+msgid "%(count)d following"
+msgstr ""
+
+#: app/templates/user.html:14
+msgid "Edit your profile"
+msgstr ""
+
+#: app/templates/user.html:19
+msgid "Follow"
+msgstr ""
+
+#: app/templates/user.html:26
+msgid "Unfollow"
 msgstr ""
 

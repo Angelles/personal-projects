@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-08-30 08:04-0400\n"
+"POT-Creation-Date: 2024-08-30 08:38-0400\n"
 "PO-Revision-Date: 2024-08-29 19:37-0400\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -156,9 +156,8 @@ msgid "Edit Profile"
 msgstr "Editar tu perfil"
 
 #: app/templates/index.html:4
-#, python-format
-msgid "Hi,"
-msgstr "¡Hola,"
+msgid "Hi"
+msgstr "¡Hola"
 
 #: app/templates/index.html:22
 msgid "Newer posts"
@@ -180,27 +179,50 @@ msgstr "Haz click aquí para pedir una nueva"
 msgid "Reset Password"
 msgstr "Nueva Contraseña"
 
-#~ msgid "Last seen on: "
-#~ msgstr "Última visita: "
+#: app/templates/user.html:7
+msgid "User"
+msgstr "Nombre de usuario"
 
-#~ msgid "User"
-#~ msgstr "Usuario"
+#: app/templates/user.html:11
+msgid "Last seen on: "
+msgstr "Última visita: "
 
-#~ msgid "%(count)d followers"
-#~ msgstr "%(count)d seguidores"
+#: app/templates/user.html:12
+#, python-format
+msgid "%(count)d followers"
+msgstr "%(count)d seguidores"
 
-#~ msgid "%(count)d following"
-#~ msgstr "siguiendo a %(count)d"
+#: app/templates/user.html:12
+#, python-format
+msgid "%(count)d following"
+msgstr "siguiendo a %(count)d"
 
-#~ msgid "Edit your profile"
-#~ msgstr "Editar tu perfil"
+#: app/templates/user.html:14
+msgid "Edit your profile"
+msgstr "Editar tu perfil"
 
-#~ msgid "Follow"
-#~ msgstr "Seguir"
+#: app/templates/user.html:19
+msgid "Follow"
+msgstr "Seguir"
 
-#~ msgid "Unfollow"
-#~ msgstr "Dejar de seguir"
+#: app/templates/user.html:26
+msgid "Unfollow"
+msgstr "Dejar de seguir"
 
+# msgid "Edit your profile"
+# msgstr "Editar tu perfil"
+# msgid "User"
+# msgstr "Usuario"
+# msgid "Last seen on: "
+# msgstr "Última visita: "
+# msgid "%(count)d followers"
+# msgstr "%(count)d seguidores"
+# msgid "%(count)d following"
+# msgstr "siguiendo a %(count)d"
+# msgid "Follow"
+# msgstr "Seguir"
+# msgid "Unfollow"
+# msgstr "Dejar de seguir"
 #~ msgid "Search Results"
 #~ msgstr "Resultados de Búsqueda"
 
@@ -210,6 +232,8 @@ msgstr "Nueva Contraseña"
 #~ msgid "Next results"
 #~ msgstr "Resultados próximos"
 
-#: app/forms.py:71
-msgid "Search"
-msgstr "Buscar"
+
+
+#~ msgid "Search"
+#~ msgstr "Buscar"
+
