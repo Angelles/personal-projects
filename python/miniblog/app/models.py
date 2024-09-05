@@ -127,6 +127,7 @@ class Post(db.Model):
     user_id: so.Mapped[int] = so.mapped_column(sa.ForeignKey(User.id),
                                                index=True)  # secondary key that maps to User id
     author: so.Mapped[User] = so.relationship(back_populates='posts')
+    # language: so.Mapped[Optional[str]] = so.mapped_column(sa.String(5))  # field for detected language
 
     # defines how to print Post class objects
     def __repr__(self):
