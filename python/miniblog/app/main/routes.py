@@ -7,13 +7,13 @@ from app.main import bp
 from app import db
 from urllib.parse import urlsplit
 from datetime import datetime, timezone
-from flask_babel import _, _l, get_locale
+from flask_babel import _, lazy_gettext as _l
 # from langdetect import detect, LangDetectException
 
 
 
 
-@bp.route('/', methods=['GET', 'POST'])
+# @bp.route('/', methods=['GET', 'POST'])
 @bp.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
@@ -29,7 +29,7 @@ def index():
         db.session.add(post)
         db.session.commit()
         flash(_('Your post is now live!'))
-        return redirect(url_for('index'))
+        return redirect(url_for('main.index'))
     posts = db.session.scalars(current_user.following_posts()).all()
     # pagination
     page = request.args.get('page', 1, type=int)
@@ -100,7 +100,7 @@ def follow(username):
             sa.select(User).where(User.username == username))
         if user is None:
             flash(_l(f'User {username} not found.'))
-            return redirect(url_for('index'))
+            return redirect(url_for('main.index'))
         if user == current_user:
             flash(_('You cannot follow yourself!'))
             return redirect(url_for('user', username=username))
@@ -109,7 +109,7 @@ def follow(username):
         flash(_l(f'You are following {username}!'))
         return redirect(url_for('user', username=username))
     else:
-        return redirect(url_for('index'))
+        return redirect(url_for('main.index'))
 
 
 @bp.route('/unfollow/<username>', methods=['POST'])
@@ -121,7 +121,7 @@ def unfollow(username):
             sa.select(User).where(User.username == username))
         if user is None:
             flash(_l(f'User {username} not found.'))
-            return redirect(url_for('index'))
+            return redirect(url_for('main.index'))
         if user == current_user:
             flash(_('You cannot unfollow yourself!'))
             return redirect(url_for('user', username=username))
@@ -130,7 +130,7 @@ def unfollow(username):
         flash(_l(f'You are not following {username}.'))
         return redirect(url_for('user', username=username))
     else:
-        return redirect(url_for('index'))
+        return redirect(url_for('main.index'))
 
 # find other users
 @bp.route('/explore')

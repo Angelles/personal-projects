@@ -1,13 +1,14 @@
-from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime, timezone
+from hashlib import md5
+from time import time
 from typing import Optional
 import sqlalchemy as sa
 import sqlalchemy.orm as so
-from app import db, login, app
+from flask import current_app
 from flask_login import UserMixin
-from hashlib import md5
-from time import time
+from werkzeug.security import generate_password_hash, check_password_hash
 import jwt
+from app import db, login
 
 # load a user from the db given the user id
 @login.user_loader

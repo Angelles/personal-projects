@@ -1,5 +1,4 @@
-from flask import Flask, request
-from app.main import routes
+from flask import Flask, request, current_app
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -16,7 +15,7 @@ from flask_babel import Babel, lazy_gettext as _l
 def get_locale():
     return request.accept_languages.best_match(create_app.config['LANGUAGES'])
 
-# app = Flask(__name__)
+#app = Flask(__name__) # test
 
 db = SQLAlchemy()
 migrate = Migrate()
