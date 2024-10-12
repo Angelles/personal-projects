@@ -9,6 +9,8 @@ from app import db
 from app.main.forms import EditProfileForm, EmptyForm, PostForm
 from app.models import User, Post
 from app.main import bp
+from langdetect import detect, LangDetectException
+
 
 
 @bp.before_app_request
