@@ -1,9 +1,20 @@
+
 html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
 }
 
 body {
+    background-color: beige;
+    text-decoration-color: #FFFFFF;
 }
 
+footer .top-nav > navigation-component {
+    align-self: flex-end;
+    display: flex;
+    overflow: hidden;
+}
+/*
 h1 {
 
 }
@@ -35,6 +46,47 @@ ul {
 
 li {
 }
-.nav-menu {
-  
+*/
+
+    /* Styles for the nav bar on the top and bottom */
+.top-nav ul {
+    background-color: #094074;
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0%;
+    padding: 2%;
+ }
+
+.top-nav li {
+    float: left;
+    color: #5adbff;
+    padding-right: 5%;
+    padding-left: 5%;
 }
+
+.top-nav li a {
+    color: #FFFFFF;
+    display: block;
+    padding: 14 px 16px;
+    background-color: #094074;
+    text-align: center;
+    text-decoration: none;
+}
+.top-nav li a:hover {
+    color: #fe9000;
+    display: block;
+    padding: 14 px 16px;
+    background-color: #094074;
+    text-align: center;
+    text-decoration: none;
+}
+
+.top-nav li a:visited {
+    color: #5adbff;
+    display: block;
+    padding: 14 px 16px;
+    background-color: #094074;
+    text-align: center;
+    text-decoration: none;
+}
+

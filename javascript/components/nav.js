@@ -6,14 +6,14 @@ class Navigation extends HTMLElement {
   
   connectedCallback(){ // uses a template literal
     this.innerHTML = `
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html#about">About</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="about.html#service-areas">Service Areas</a></li>
-                <li><a href="about.html#services">Services</a></li>
-                <li><a href="about.html#testimonials">Testimonials</a></li>
+        <nav class="top-nav">
+            <ul class="top-nav">
+                <span><li class="top-nav"><a href="index.html" class="top-nav">Home</a></li></span>
+                <span><li class="top-nav"><a href="about.html#about" class="top-nav">About</a></li></span>
+                <span><li class="top-nav"><a href="contact.html" class="top-nav">Contact Us</a></li></span>
+                <span><li class="top-nav"><a href="about.html#service-areas" class="top-nav">Service Areas</a></li></span>
+                <span><li class="top-nav"><a href="about.html#services" class="top-nav">Services</a></li></span>
+                <span><li class="top-nav"><a href="about.html#testimonials" class="top-nav">Testimonials</a></li></span>
             </ul>
         </nav>`
         ;
