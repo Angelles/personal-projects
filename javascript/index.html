@@ -3,22 +3,21 @@
     <meta charset="utf-8" />
     <meta name="author" content="Angelle Leger" />
     <meta name="description" content="A sample business website" />
-    <script src="../scripts/scripts.js"></script>
-    <link href="../styles/styles.css" rel="stylesheet" />
-    <title>Leger Construction</title>
+    <script src="../javascript/scripts/scripts.js" type="text/javascript" defer></script>
+      <!-- reusable components start -->
+      <script src="../javascript/components/title.js" type="text/javascript" defer></script>
+      <script src="../javascript/components/nav.js" type="text/javascript" defer></script>
+      <!-- reusable components end -->
+    <link href="styles/styles.css" rel="stylesheet" />
   </head>
   <body>
+    <title-component></title-component>
+    <navigation-component></navigation-component>
+    <main>
     <h1>Leger Construction</h1>
-    <nav class="nav-menu"><!-- add links later -->
-      <ul>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Locations Served</li>
-        <li>Services</li>
-        <li>Testimonials</li>
-      </ul>
       <article>
         <p></p><!-- provide a blurb about the company, what it does, and how long it's been in business. Include some pictures here to draw a client in -->
       </article>
+    </main>
   </body>
 </html>
