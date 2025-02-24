@@ -9,11 +9,11 @@ class Navigation extends HTMLElement {
         <nav class="nav-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li>About</li>
+                <li><a href="about.html#about">About</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
-                <li>Locations Served</li>
-                <li>Services</li>
-                <li>Testimonials</li>
+                <li><a href="about.html#service-areas">Service Areas</a></li>
+                <li><a href="about.html#services">Services</a></li>
+                <li><a href="about.html#testimonials">Testimonials</a></li>
             </ul>
         </nav>`
         ;
