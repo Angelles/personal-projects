@@ -29,7 +29,7 @@ Mako==1.4.2
 MarkupSafe==2.1.5
 packaging==24.1
 PyJWT==2.15.0
-python-dotenv==1.0.1
+python-dotenv==1.2.2
 pytz==2024.1
 requests==2.32.4
 six==1.16.0
